@@ -1,16 +1,9 @@
 import React from "react";
 import { Box } from "atomic-layout";
-import styled from "styled-components";
 import Card from "@material-ui/core/Card";
 import { BackgroundImage } from "../../components";
 import { LoginForm } from "./login.form";
 import background from "../../assets/login-bg.jpg";
-
-const LoginFormContainer = styled.div`
-  background-color: #eaeaea;
-  border-radius: 0 0 30px 30px;
-  box-shadow: 0px 0px 15px 0 #0004;
-`;
 
 export const LoginPage = () => {
   return (
