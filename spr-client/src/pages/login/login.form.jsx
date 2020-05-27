@@ -10,7 +10,8 @@ import { VisiblePassword } from "../../components";
 import { Box } from "atomic-layout";
 import Styled from "styled-components";
 import logo from "../../assets/logo.png";
-import { FormGroup, makeStyles, useTheme } from "@material-ui/core";
+import useTheme from "@material-ui/core/styles/useTheme";
+import makeStyles from "@material-ui/core/styles/makeStyles";
 
 const LogoImage = Styled.img`
     width: 150px;
@@ -52,41 +53,34 @@ export const LoginForm = () => {
       </Typography>
 
       <FormControl className={classes.form}>
-        <FormGroup>
-          <TextField
-            name={"username"}
-            label={"Username"}
-            autoComplete={"username"}
-            variant="outlined"
-            margin="dense"
-          />
-        </FormGroup>
-        <FormGroup>
-          <VisiblePassword
-            name="password"
-            label="Password"
-            autoComplete="current-password"
-            variant="outlined"
-            margin="dense"
-          />
-        </FormGroup>
-        <FormGroup className={classes.checkbox}>
-          <FormControlLabel
-            control={<Checkbox color="primary" />}
-            title="Remember Me"
-            label="Remember Me"
-          />
-        </FormGroup>
-        <FormGroup>
-          <Button
-            variant="contained"
-            color="primary"
-            startIcon={<LockIcon />}
-            size="large"
-          >
-            Login
-          </Button>
-        </FormGroup>
+        <TextField
+          name={"username"}
+          label={"Username"}
+          autoComplete={"username"}
+          variant="outlined"
+          margin="dense"
+        />
+        <VisiblePassword
+          name="password"
+          label="Password"
+          autoComplete="current-password"
+          variant="outlined"
+          margin="dense"
+        />
+        <FormControlLabel
+          control={<Checkbox color="primary" />}
+          title="Remember Me"
+          label="Remember Me"
+          className={classes.checkbox}
+        />
+        <Button
+          variant="contained"
+          color="primary"
+          startIcon={<LockIcon />}
+          size="large"
+        >
+          Login
+        </Button>
       </FormControl>
     </Box>
   );
